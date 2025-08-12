@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Hariz Iqmal</title>
+    <link rel="stylesheet" href="BasicFireStyle.css">
+</head>
+<body>
+    </br>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="sijil index.html">Certificate</a>
+        <a href="project index.html">My Projects</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header-profile">
+  <div class="header-text">
+        <h1>BASIC FIREWALL CONFIGURATION</h1>
+        <P>Mengkonfigurasi firewall pada Linux menggunakan iptables untuk mengawal akses rangkaian dan memastikan keselamatan.</P>
+        <div class="middle">
+        <form action="index.html">
+        <button class="btn btn1">Home</button>
+        </div>
+    </form>
+    </header>
+
+<section id="project-firewall" class="project-section">
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 1: Tetapkan Policy Default DROP</h3>
+      <p>Set semua chain utama INPUT, FORWARD dan OUTPUT kepada DROP untuk keselamatan maksimum.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 1.png" alt="Firewall Step 1 - Policy Default DROP" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 2: Benarkan Loopback Interface</h3>
+      <p>Benarkan trafik untuk loopback interface (localhost) supaya sistem berfungsi dengan betul.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 2.png" alt="Firewall Step 2 - Allow Loopback" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 3: Benarkan trafik masuk SSH (port 22)</h3>
+      <p>Benarkan sambungan SSH masuk, penting untuk remote access server.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 3.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 4: Benarkan trafik masuk HTTP dan HTTPS</h3>
+      <p>Benarkan trafik web (HTTP port 80 dan HTTPS port 443).</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 4.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 5: Benarkan trafik masuk ICMP (ping)</h3>
+      <p>Benarkan permintaan ping masuk untuk diagnosa rangkaian.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 5.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 6: Benarkan trafik keluar</h3>
+      <p>Benarkan semua trafik keluar dari server.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 6.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 7: Simpan rules iptables</h3>
+      <p>Simpan rules supaya kekal selepas reboot.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 7.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+  <div class="row reveal">
+    <div class="col text">
+      <h3>Step 8: Lihat rules semasa</h3>
+      <p>Paparkan semua rules iptables dengan maklumat terperinci.</p>
+    </div>
+    <div class="col image">
+      <img src="projectss/basic firewall 8.png" alt="Firewall Step 3 - Established Connections" />
+    </div>
+  </div>
+
+<button id="backToTopBtn" title="Back to Top">⬆ Back to Top</button>
+
+</section>
+
+<script>
+ function reveal() {
+    const reveals = document.querySelectorAll(".project-section .row");
+
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+reveal(); // Run on load
+
+  // dapatkan button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // tunjuk button bila scroll bawah sikit (contoh 200px)
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // scroll smooth ke atas bila klik button
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+</script>
+</body>
